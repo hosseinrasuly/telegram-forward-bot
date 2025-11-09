@@ -20,8 +20,8 @@ from telegram.ext import (
 
 # ---------- پیکربندی ----------
 BOT_TOKEN = "8296663525:AAF6CS44PoHq5HU4dgHEGDJ_5-Zs8m8HiRw"
-OWNER_CHAT_ID = "@hosseinrasoly " # آیدی عددی خودت را اینجا بگذار
-STATE_FILE = Path("relay_state.json")  # برای نگهداری موقتی مپ‌کردن‌ها (اختیاری)
+OWNER_CHAT_ID = "@hosseinrasoly" # آیدی عددی خودت را اینجا بگذار
+#STATE_FILE = Path("relay_state.json")  # برای نگهداری موقتی مپ‌کردن‌ها (اختیاری)
 
 # ---------- لاگ ----------
 logging.basicConfig(
