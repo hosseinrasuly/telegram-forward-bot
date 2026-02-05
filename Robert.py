@@ -3,17 +3,17 @@ import os
 from telegram import Update, ForceReply
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
 
-# ---------- تنظیمات ----------
-OWNER_CHAT_ID = <@hosseinrasoly>  # اینجا آی‌دی تلگرام خودت رو بذار
+# (((((تنظیمات)))))
+OWNER_CHAT_ID = <@hosseinrasoly>  
 BOT_TOKEN = os.environ.get("8296663525:AAF6CS44PoHq5HU4dgHEGDJ_5-Zs8m8HiRw")
 
-# ---------- لاگ ----------
+# ((((((((لاگ))))))))
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
 
-# ---------- مراحل Conversation ----------
+# ((((((((((مراحل Conversation))))))))))
 ASK_MESSAGE = 1
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -27,7 +27,7 @@ async def receive_message(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     user = update.message.from_user
     text = update.message.text
 
-    # ارسال پیام به صاحب ربات
+    
     try:
         await context.bot.send_message(
             chat_id=OWNER_CHAT_ID,
@@ -42,7 +42,7 @@ async def receive_message(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             "متأسفانه مشکلی پیش آمد و پیام شما ارسال نشد."
         )
 
-    # بازگشت به حالت انتظار برای پیام جدید
+    
     return ASK_MESSAGE
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -62,7 +62,7 @@ def main():
 
     app.add_handler(conv_handler)
     print("Bot is running...")
-    app.run_polling()  # برای Render اگر بخوای webhook بذاری باید تغییر بدی
+    app.run_polling()  
 
 if __name__ == '__main__':
     main()
